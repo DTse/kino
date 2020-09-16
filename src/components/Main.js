@@ -2,9 +2,7 @@ import React from "react";
 
 import { useAppContext } from "../context/AppContext";
 
-import Tab from "./Tab";
-import TabHeader from "./TabHeader";
-import TabFooter from "./TabFooter";
+import Board from "./Board";
 
 import "../styles/main.css";
 
@@ -38,9 +36,7 @@ const Main = () => {
                 </div>
             </div>
             <div className="app__main__wrapper">
-                <TabHeader dispatch={dispatch} selected={state.selected} boards={state.boards} />
-                <Tab dispatch={dispatch} selected={state.selected} system={state.systems[state.selected]} numbers={state.boards[state.selected]} />
-                <TabFooter dispatch={dispatch} selected={state.selected} system={state.systems[state.selected]} />
+                <Board dispatch={dispatch} selected={state.selected} system={state.systems[state.selected]} numbers={state.boards[state.selected]} boards={state.boards}/>
             </div>
             <div className="app__main__footer">
                 <div className="app__main__price">
