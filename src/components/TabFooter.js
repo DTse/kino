@@ -1,13 +1,13 @@
 import React from "react";
 
-const TabFooter = ({ selected, dispatch, system }) => {
+const TabFooter = ({ selected, dispatch, systems }) => {
     const handleClick = (e) => {
         dispatch({ type: "setSystem", value: parseInt(e.target.id), selected: selected });
     };
 
     const handlePick = () => {
         var tempArr = [];
-        while (tempArr.length < system) {
+        while (tempArr.length < systems[selected]) {
             var r = Math.floor(Math.random() * 49) + 1;
             if (tempArr.indexOf(r) === -1) tempArr.push(r);
         }
@@ -20,16 +20,16 @@ const TabFooter = ({ selected, dispatch, system }) => {
         <div className="app__tab__footer">
             <span className="app__tab__footer__title">System</span>
             <span className="app__tab__footer__systems">
-                <span id="6" onClick={handleClick} className={`app__tab__footer__systems__system${system === 6 ? " selected" : ""}`}>
+                <span id="6" onClick={handleClick} className={`app__tab__footer__systems__system${systems[selected] === 6 ? " selected" : ""}`}>
                     6
                 </span>
-                <span id="7" onClick={handleClick} className={`app__tab__footer__systems__system${system === 7 ? " selected" : ""}`}>
+                <span id="7" onClick={handleClick} className={`app__tab__footer__systems__system${systems[selected] === 7 ? " selected" : ""}`}>
                     7
                 </span>
-                <span id="8" onClick={handleClick} className={`app__tab__footer__systems__system${system === 8 ? " selected" : ""}`}>
+                <span id="8" onClick={handleClick} className={`app__tab__footer__systems__system${systems[selected] === 8 ? " selected" : ""}`}>
                     8
                 </span>
-                <span id="9" onClick={handleClick} className={`app__tab__footer__systems__system${system === 9 ? " selected" : ""}`}>
+                <span id="9" onClick={handleClick} className={`app__tab__footer__systems__system${systems[selected] === 9 ? " selected" : ""}`}>
                     9
                 </span>
             </span>

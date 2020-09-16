@@ -2,7 +2,7 @@ import React from "react";
 
 import plus from "../assets/plus.svg";
 
-const TabHeader = ({ selected, dispatch, boards, system }) => {
+const TabHeader = ({ selected, dispatch, boards, systems }) => {
     const handleClick = (e) => {
         dispatch({ type: "setSelected", value: parseInt(e.target.id) });
     };
@@ -17,7 +17,7 @@ const TabHeader = ({ selected, dispatch, boards, system }) => {
                     onClick={handleClick}
                     id={index}
                     className={`app__tabs__tab${index === selected ? " selected" : ""}${
-                        value.length === 0 ? " empty" : value.length < system ? " invalid" : " valid"
+                        value.length === 0 ? " empty" : value.length < systems[index] ? " invalid" : value.length === systems[index] ? " valid" : " invalid"
                     }`}
                 >
                     {index + 1}

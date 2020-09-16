@@ -1,7 +1,7 @@
 import React from "react";
 import _ from "lodash";
 
-const Number = ({ number, numbers, dispatch, selected, system }) => {
+const Number = ({ number, numbers, dispatch, selected, systems }) => {
     var newArray = [...numbers];
     const handleClick = (e) => {
         if (_.includes(numbers, parseInt(e.target.id))) {

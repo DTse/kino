@@ -36,7 +36,7 @@ const Main = () => {
                 </div>
             </div>
             <div className="app__main__wrapper">
-                <Board dispatch={dispatch} selected={state.selected} system={state.systems[state.selected]} numbers={state.boards[state.selected]} boards={state.boards}/>
+                <Board dispatch={dispatch} selected={state.selected} system={state.systems[state.selected]} systems={state.systems} numbers={state.boards[state.selected]} boards={state.boards}/>
             </div>
             <div className="app__main__footer">
                 <div className="app__main__price">
