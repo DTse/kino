@@ -25,6 +25,7 @@
 }
 
 .app__main__reset,
+.app__main__quick,
 .app__main__play {
     padding: 10px;
     border-radius: 4px;
@@ -38,6 +39,7 @@
     transition: all 0.2s ease-in-out;
 }
 
+.app__main__quick:hover,
 .app__main__reset:hover {
     color: white;
     background-color: #565656;
@@ -45,6 +47,11 @@
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+}
+
+.app__main__quick{
+    margin-left: auto;
+    margin-right: 5px
 }
 
 .app__main__play{
@@ -107,7 +114,8 @@
 .app__tabs__add{
     cursor: pointer;
     width: 15px;
-    margin-top: 3px;
+    margin-top: 4px;
+    margin-left: 10px
 }
 
 .app__tab__body{

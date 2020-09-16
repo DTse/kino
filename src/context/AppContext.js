@@ -16,7 +16,7 @@ let initialState = {
 };
 
 /**
- * useReducer returns a callback  that updates the state.
+ * useReducer returns a callback that updates the state.
  * @param {string} state
  * @param {object} action
  * @return {any}
@@ -27,13 +27,21 @@ let reducer = (state, action) => {
         case "reset":
             return initialState;
         case "setBoard":
+             //Update board
             var newBoard = [...state.boards];
             newBoard[action.selected] = [...action.value];
-            return { ...state, boards: [...newBoard] };
-        case "setPrice":
+            //Update prices
             var newPrice = [...state.prices];
-            newPrice[action.selected] = action.value;
-            return { ...state, prices: [...newPrice] };
+            if (newBoard[action.selected].length === state.systems[action.selected]) {
+                var price = 1;
+                for (var i = state.systems[action.selected]; i >= 6; i--) {
+                    price *= i;
+                }
+                newPrice[action.selected] = price / 6;
+            }else{
+                newPrice[action.selected] = 0;
+            }
+            return { ...state, boards: [...newBoard], prices: [...newPrice] };
         case "setSystem":
             var newSystem = [...state.systems];
             newSystem[action.selected] = action.value;

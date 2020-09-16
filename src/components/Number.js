@@ -1,8 +1,7 @@
 import React from "react";
 import _ from "lodash";
 
-
-const Number = ({ number, numbers, dispatch, selected }) => {
+const Number = ({ number, numbers, dispatch, selected, system }) => {
     var newArray = [...numbers];
     const handleClick = (e) => {
         if (_.includes(numbers, parseInt(e.target.id))) {
@@ -19,4 +18,4 @@ const Number = ({ number, numbers, dispatch, selected }) => {
     );
 };
 
-export default Number
+export default Number;
