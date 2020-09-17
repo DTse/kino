@@ -4,6 +4,6 @@ To run after download:
 1. yarn install
 2. yarn start
 
-TODO:
-Notifications when numbers are less than the system
-Unit test
+TODO:  
+Notifications when numbers are less than the system. 
+Unit test.  
